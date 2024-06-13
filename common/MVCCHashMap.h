@@ -239,6 +239,18 @@ public:
         bucket_number(key));
   }
 
+  // Extend MVCCHashMap.h by Tony: add function to get All kv pairs for print out in testing and debugging
+  using KeyValuePairType = std::pair<KeyType, MappedValueType>;
+  std::vector<KeyValuePairType> getAllKeyValuePairs() const {
+      std::vector<KeyValuePairType> result;
+      for (const auto& bucketMap : maps) {
+          for (const auto& kvPair : bucketMap) {
+              result.emplace_back(kvPair);
+          }
+      }
+      return result;
+  }
+
 private:
   static uint64_t get_version(std::tuple<uint64_t, ValueType> &t) {
     return std::get<0>(t);

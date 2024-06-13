@@ -25,6 +25,10 @@ enum class ExecutorStatus {
   Bohm_GC,
   Pwv_Analysis,
   Pwv_Execute,
+  Caracal_Analysis, // pre-initialization
+  Caracal_Initializtion,
+  Caracal_Execution,
+  Caracal_GC,
   STOP,
   EXIT
 };

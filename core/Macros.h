@@ -1,5 +1,5 @@
 //
-// Created by Yi Lu on 3/18/19.
+// Created by Yi Lu on 3/18/19, extended by Haowen Li on 6/5/24
 //
 
 #pragma once
@@ -91,6 +91,6 @@ DEFINE_int32(ariaFB_lock_manager, 0,
   context.ariaFB_lock_manager = FLAGS_ariaFB_lock_manager;                     \
   CHECK(context.coordinator_num == 1 || context.bohm_single_spin == false)     \
       << "bohm_single_spin must be used in single-node mode.";                 \
-  CHECK((context.mvcc ^ (context.protocol == "Bohm")) == 0)                    \
-      << "MVCC must be used in Bohm.";                                         \
+  CHECK((context.mvcc ^ (context.protocol == "Bohm" || context.protocol == "Caracal")) == 0) \
+      << "MVCC must be used in Bohm and Caracal protocols.";                                       \
   context.set_star_partitioner();

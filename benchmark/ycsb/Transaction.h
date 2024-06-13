@@ -57,7 +57,7 @@ public:
       }
     }
 
-    if (this->process_requests(worker_id)) {
+    if (this->process_requests(worker_id)) { // call read handler
       return TransactionResult::ABORT;
     }
 
