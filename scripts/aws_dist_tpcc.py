@@ -11,7 +11,7 @@ from utility import load_ips
 from utility import get_cmd_string
 
 # repeat experiments for the following times
-REPEAT = 5
+REPEAT = 1
 
 assert len(sys.argv) == 3, "this script expects two parameters"
 
@@ -22,7 +22,7 @@ ips = load_ips('ips.txt')
 
 n_machines = len(ips)
 
-assert n_machines == 8, "we are expecting there are 8 machines."
+assert n_machines == 2, "we are expecting there are 2 machines."
 
 threads = 12
 batch_size = 500

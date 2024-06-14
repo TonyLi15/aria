@@ -7,8 +7,6 @@
 #include <boost/algorithm/string.hpp>
 #include <string>
 #include <vector>
-#include <atomic>
-#include <memory>
 
 #include <glog/logging.h>
 

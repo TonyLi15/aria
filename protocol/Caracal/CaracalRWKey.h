@@ -5,8 +5,6 @@
 #pragma once
 
 #include <glog/logging.h>
-#include <atomic>
-#include <memory>
 
 namespace aria {
 
