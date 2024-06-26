@@ -1,5 +1,6 @@
 //
 // Created by Yi Lu on 7/14/18.
+// Extended by Haowen Li on 6/21/24.
 //
 
 #pragma once
@@ -21,6 +22,13 @@ public:
     while (lock_.test_and_set(std::memory_order_acquire))
       ;
   }
+
+  
+  // Added try_lock for determining if the lock acquisition is failed or not
+  bool try_lock(){
+    return !lock_.test_and_set(std::memory_order_acquire);
+  }
+  
 
   void unlock() { lock_.clear(std::memory_order_release); }
 
